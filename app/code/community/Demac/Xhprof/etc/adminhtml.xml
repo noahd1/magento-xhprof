@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <report translate="title" module="reports">
+            <children>
+                <xhprof translate="title" module="xhprof">
+                    <title>Xhprof Reports</title>
+                    <action>adminhtml/xhprof</action>
+                    <sort_order>100</sort_order>
+                </xhprof>
+            </children>
+        </report>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <report translate="title" module="xhprof">
+                        <children>
+                            <xhprof translate="title" module="xhprof">
+                                <title>Xhprof</title>
+                                <sort_order>35</sort_order>
+                                <action>adminhtml/xhprof</action>
+                                <sort_order>10</sort_order>
+                            </xhprof>
+                        </children>
+                    </report>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

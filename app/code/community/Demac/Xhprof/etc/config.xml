@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Demac_Xhprof>
+            <version>0.1.1</version>
+        </Demac_Xhprof>
+    </modules>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <xhprof before="Mage_Adminhtml">Demac_Xhprof_Adminhtml</xhprof>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <global>
+        <models>
+            <xhprof>
+                <class>Demac_Xhprof_Model</class>
+                <resourceModel>xhprof_resource</resourceModel>
+            </xhprof>
+            <xhprof_resource>
+                <class>Demac_Xhprof_Model_Resource</class>
+                <entities>
+                    <record>
+                        <table>xhprof_record</table>
+                    </record>
+                </entities>
+            </xhprof_resource>
+        </models>
+        <resources>
+            <xhprof_setup>
+                <setup>
+                    <module>Demac_Xhprof</module>
+                </setup>
+            </xhprof_setup>
+        </resources>
+
+        <blocks>
+            <xhprof>
+                <class>Demac_Xhprof_Block</class>
+            </xhprof>
+        </blocks>
+
+        <helpers>
+            <xhprof>
+                <class>Demac_Xhprof_Helper</class>
+            </xhprof>
+        </helpers>
+
+        <adminhtml>
+            <layout>
+                <updates>
+                    <xhprof>
+                        <file>demac/xhprof.xml</file>
+                    </xhprof>
+                </updates>
+            </layout>
+        </adminhtml>
+        <events>
+            <controller_front_init_before>
+                <observers>
+                    <xhprof_start>
+                        <type>singleton</type>
+                        <class>xhprof/observer</class>
+                        <method>start</method>
+                    </xhprof_start>
+                </observers>
+            </controller_front_init_before>
+            <controller_front_send_response_after>
+                <observers>
+                    <xhprof_stop>
+                        <type>singleton</type>
+                        <class>xhprof/observer</class>
+                        <method>stop</method>
+                    </xhprof_stop>
+                </observers>
+            </controller_front_send_response_after>
+        </events>
+    </global>
+
+    <default>
+        <dev>
+            <xhprof>
+                <enabled>false</enabled>
+                <interval>100</interval>
+                <include_paths>/</include_paths>
+                <exclude_paths>/admin/</exclude_paths>
+            </xhprof>
+        </dev>
+    </default>
+</config>
