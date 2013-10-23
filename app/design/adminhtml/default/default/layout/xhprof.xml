@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_xhprof_index>
+        <reference name="adminhtml_record">
+            <block type="core/template" name="confirmation" as="confirmation" template="xhprof/report/record/chart.phtml"/>
+        </reference>
+    </adminhtml_xhprof_index>
+
+    <adminhtml_xhprof_view>
+    </adminhtml_xhprof_view>
+
+    <adminhtml_xhprof_calls>
+    </adminhtml_xhprof_calls>
+
+    <adminhtml_xhprof_callsgrid>
+
+    </adminhtml_xhprof_callsgrid>
+</layout>
