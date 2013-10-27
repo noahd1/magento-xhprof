@@ -20,6 +20,16 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </active>
+                        <full_mode translate="label">
+                            <label>Enable Full Mode Profiling</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>If enabled Xhprof will log the raw data for each request, this allows to see the details for each call request made. Please notice this can generate a lot of data in a very sort amount of time</comment>
+                        </full_mode>
                         <interval translate="label comment">
                             <label>Interval</label>
                             <frontend_type>text</frontend_type>

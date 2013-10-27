@@ -88,6 +88,7 @@
         <dev>
             <xhprof>
                 <enabled>false</enabled>
+                <full_mode>false</full_mode>
                 <interval>100</interval>
                 <include_paths>/</include_paths>
                 <exclude_paths>/admin/</exclude_paths>
