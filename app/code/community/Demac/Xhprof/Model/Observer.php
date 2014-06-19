@@ -33,7 +33,9 @@ class Demac_Xhprof_Model_Observer
                 $isPathValid = $this->_isPathValid($requestPath, $includePaths, $excludePaths);
 
                 if($isPathValid){
-                    xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY); //TODO: Make this configurable
+                    // Start Refactor : Make both values configurable
+                    xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);
+                    // End Refactor
                     $this->is_running = true;
                 }
             }
