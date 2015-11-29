@@ -4,7 +4,7 @@ engines:
     phpmd:
         enabled: true
     fixme:
-        enabled: true
+        enabled: false
 exclude_paths:
     - spec/**/*
     - vendor/**/*
